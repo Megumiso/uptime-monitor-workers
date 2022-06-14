@@ -1,0 +1,16 @@
+name = "megumiso-uptime" # todo
+workers_dev = true
+
+main = "build/worker/shim.mjs"
+compatibility_date = "2022-01-20"
+
+kv_namespaces = [
+    { binding = "megumiso-uptime", id = "854ac440bcd3499db0b884e0deaa0701" }
+]
+
+[vars]
+WORKERS_RS_VERSION = "0.0.9"
+PING_URL = "https://megumiso.com"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
